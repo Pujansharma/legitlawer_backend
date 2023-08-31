@@ -2,11 +2,12 @@ const express = require("express");
 const { connection } = require("./config/db");
 require("dotenv").config()
 const { userrouter } = require("./routes/user_route");
+const { clientRoute } = require("./routes/client");
+const { lawyerRoute } = require("./routes/Lawyers");
 const app = express()
 app.use(express.json())
 const cors=require('cors');
-const { clientRoute } = require("./routes/client");
-const { lawyerRoute } = require("./routes/Lawyers");
+
 app.use(cors())
 app.get('/',(req,res)=>{
     res.send('welcome')
